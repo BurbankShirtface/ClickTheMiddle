@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click The Middle</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="title-banner">
+      <figure><img src="assets\crosshairs.png" /></figure>
+      <h1>Click The Middle</h1>
+      <figure><img src="assets\crosshairs.png" /></figure>
+    </div>
+    <div class="container">
+      <div class="game-box">
+        <img class="user-crosshairs" src="assets\crosshairs.png" />
+      </div>
+      <div class="rules-container">
+        <p class="rules-para">
+          1. Click the "Play" button or press "Spacebar" and a square or
+          rectangle will appear.<br /><br /><br />
+          2. Click as close to the middle of the box as you can.<br /><br /><br />
+          3. You will get a score that indicates how many pixels away from the
+          middle you clicked.<br /><br /><br />
+          4. Lowest score wins.<br /><br /><br />
+          5. Click "Play Again" or press "Spacebar" to play again.<br /><br /><br />
+          That's it!
+        </p>
+      </div>
+      <div class="result"></div>
+    </div>
+    <div class="play-btn-container">
+      <button class="play">Play</button>
+      <button class="play-again">Play Again</button>
+    </div>
+    <script src="https://unpkg.com/canvas-confetti@1.5.1/dist/confetti.browser.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #fff2d3;
+  height: 100vh;
+  min-height: 560px;
+  max-height: 100vh;
+}
+
+.title-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  text-align: center;
+}
+
+img {
+  height: 30px;
+  margin: auto 20px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #172c66;
+}
+
+.container {
+  width: 90%;
+  height: 70%;
+  max-width: 1000px;
+  min-height: 400px;
+  max-height: 800px;
+  border: solid 1px #172c66;
+  border-radius: 5px;
+  background-color: #f1d8cc;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.play-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 20%;
+  position: absolute;
+  bottom: 12px;
+}
+
+button {
+  margin: 20px auto;
+  height: 40%;
+  width: 25%;
+  background-color: #8bd3dd;
+  color: #001858;
+  border: solid 1px #001858;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+button:hover {
+  box-shadow: 1px 1px 5px gray;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+.rules-container {
+  height: 80%;
+  width: 80%;
+  text-align: center;
+  color: #001858;
+  font-size: 1.3em;
+  font-weight: 600;
+  word-spacing: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-box {
+  position: absolute;
+  background-color: #f1d8cc;
+}
+
+.result {
+  width: 85%;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #8bd3dd;
+  color: #001858;
+  font-weight: 600;
+  display: none;
+  z-index: 5;
+  border: solid 2px #001858;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+  position: absolute;
+  bottom: 25px;
+}
+
+.play-again {
+  display: none;
+  font-size: 25px;
+}
+
+.user-crosshairs {
+  display: none;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  position: absolute;
+}
