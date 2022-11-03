@@ -6,8 +6,10 @@ const rules = document.querySelector(".rules-container");
 const result = document.querySelector(".result");
 let crosshairs = document.querySelector(".user-crosshairs");
 let containerInfo = container.getBoundingClientRect();
-let gameMaxWidth = Math.round(containerInfo.width);
-let gameMaxHeight = Math.round(containerInfo.height);
+// let gameMaxWidth = Math.round(containerInfo.width);
+// let gameMaxHeight = Math.round(containerInfo.height);
+let gameMaxHeight = Math.round(container.offsetHeight);
+let gameMaxWidth = Math.round(container.offsetWidth);
 let xMiddle,
   yMiddle,
   gameboxHeight,
@@ -16,7 +18,9 @@ let xMiddle,
   yCloseToMiddle,
   totalMiss,
   clickX,
-  clickY;
+  clickY,
+  xAxis,
+  yAxis;
 
 window.addEventListener("resize", function () {
   containerInfo = container.getBoundingClientRect();
@@ -26,27 +30,36 @@ window.addEventListener("resize", function () {
 });
 
 function makebox(maxHeight, maxWidth) {
-  gameboxHeight = Math.round(maxHeight / (Math.floor(Math.random() * 10) + 1));
-  gameboxWidth = Math.round(maxWidth / (Math.floor(Math.random() * 10) + 1));
+  console.log(`maxHeight:${maxHeight}`);
+  gameboxHeight = Math.round(Math.floor(Math.random() * maxHeight));
+  gameboxWidth = Math.round(Math.floor(Math.random() * maxWidth));
+  if (maxWidth < 400 && gameboxWidth < 100) {
+    gameboxWidth = 200;
+  } else {
+    if (maxWidth > 400 && gameboxWidth < 300) {
+      gameboxWidth = 300;
+    }
+  }
+  console.log(gameboxHeight);
   let x = Math.floor(Math.random() * (maxWidth - gameboxWidth));
+
+  if (maxHeight < 700 && gameboxHeight < 150) {
+    gameboxHeight = 300;
+  } else {
+    if (maxHeight > 700 && gameboxHeight < 300) {
+      gameboxHeight = 300;
+    }
+  }
   let y = Math.floor(Math.random() * (maxHeight - gameboxHeight));
-  let xAxis = 300 + x;
-  let yAxis = 300 + y;
-  if (xAxis > maxWidth) {
-    x = Math.abs(x - 300);
-  }
-  if (yAxis > maxHeight) {
-    y = Math.abs(y - 300);
-  }
+  console.log(`y:${y}, gameboxHeight:${gameboxHeight}`);
+
   crosshairs.style.display = "none";
   gamebox.style.width = gameboxWidth + "px";
   gamebox.style.height = gameboxHeight + "px";
   gamebox.style.top = y + "px";
   gamebox.style.left = x + "px";
-  gamebox.style.border = "solid 2px black";
+  gamebox.style.border = "solid 1px black";
   gamebox.style.borderRadius = "5px";
-  gamebox.style.minWidth = "300px";
-  gamebox.style.minHeight = "300px";
 }
 window.addEventListener("keydown", function (e) {
   if (e.key == " " || e.code == "Space") {
@@ -97,7 +110,7 @@ function playGame() {
   gamebox.addEventListener("click", middleClick);
 }
 
-// make it more responsive
 // high score counter?
+// average score counter?
 // timer?
 // some equation that compares time/click score?

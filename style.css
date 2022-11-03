@@ -10,6 +10,7 @@ body {
   height: 100vh;
   min-height: 560px;
   max-height: 100vh;
+  position: relative;
 }
 
 .title-banner {
@@ -124,4 +125,42 @@ button:active {
   width: 20px;
   margin: 0;
   position: absolute;
+}
+
+@media (max-width: 460px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .title-banner {
+    height: 8%;
+  }
+
+  .play-btn-container {
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+  }
+  button {
+    height: 80%;
+    width: 25%;
+  }
+  .play-again {
+    font-size: 20px;
+    margin: 0 auto;
+  }
+  .rules-para {
+    height: 100%;
+    font-size: 15px;
+  }
+  .play {
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 460px;
+    min-height: 200px;
+    width: 100%;
+    height: 82%;
+    margin: 0;
+  }
 }
