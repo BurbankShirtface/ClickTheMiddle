@@ -33,7 +33,7 @@ function makebox(maxHeight, maxWidth) {
   console.log(`maxHeight:${maxHeight}`);
   gameboxHeight = Math.round(Math.floor(Math.random() * maxHeight));
   gameboxWidth = Math.round(Math.floor(Math.random() * maxWidth));
-  if (maxWidth < 400 && gameboxWidth < 100) {
+  if (maxWidth < 400 && gameboxWidth < 200) {
     gameboxWidth = 200;
   } else {
     if (maxWidth > 400 && gameboxWidth < 300) {
@@ -43,7 +43,7 @@ function makebox(maxHeight, maxWidth) {
   console.log(gameboxHeight);
   let x = Math.floor(Math.random() * (maxWidth - gameboxWidth));
 
-  if (maxHeight < 700 && gameboxHeight < 150) {
+  if (maxHeight < 700 && gameboxHeight < 300) {
     gameboxHeight = 300;
   } else {
     if (maxHeight > 700 && gameboxHeight < 300) {
